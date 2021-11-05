@@ -2,6 +2,13 @@
 const taskManager = new TaskManager(0);
 // Here is where you can test your code after completing all the steps
 
+// Finding and Display the Date Object
+const dateElement = document.querySelector("#date-element");
+let today = new Date();
+const [month, day, year] = [today.getMonth(), today.getDate(), today.getFullYear()];
+let dateString = `Current Date: ${day} / ${month} / ${year}`;
+dateElement.innerHTML = dateString;
+
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 

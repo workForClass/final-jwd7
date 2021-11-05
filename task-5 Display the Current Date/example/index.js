@@ -1,11 +1,11 @@
-const form = document.querySelector("#new-task-form");
-
 // Finding and Display the Date Object
 const dateElement = document.querySelector("#date-element");
 let today = new Date();
 const [month, day, year] = [today.getMonth(), today.getDate(), today.getFullYear()];
 let dateString = `Current Date: ${day} / ${month} / ${year}`;
 dateElement.innerHTML = dateString;
+
+const form = document.querySelector("#new-task-form");
 
 form.addEventListener("submit", (event) => {
   const validateName = document.querySelector("#new-task-name");

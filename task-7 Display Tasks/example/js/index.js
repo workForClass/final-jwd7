@@ -1,5 +1,13 @@
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
+
+// Finding and Display the Date Object
+const dateElement = document.querySelector("#date-element");
+let today = new Date();
+const [month, day, year] = [today.getMonth(), today.getDate(), today.getFullYear()];
+let dateString = `Current Date: ${day} / ${month} / ${year}`;
+dateElement.innerHTML = dateString;
+
 // Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
