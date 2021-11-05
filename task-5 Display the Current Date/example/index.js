@@ -1,31 +1,30 @@
-// Initialize a new TaskManager with currentId set to 0
-const taskManager = new TaskManager(0);
-// As you initialize a new TaskManager above, below is where you can test your code when you finish all the steps
-
-// Select the New Task Form
 const form = document.querySelector("#new-task-form");
 
-// Add an 'onsubmit' event listener
+// Finding and Display the Date Object
+const dateElement = document.querySelector("#date-element");
+let today = new Date();
+const [month, day, year] = [today.getMonth(), today.getDate(), today.getFullYear()];
+let dateString = `Current Date: ${day} / ${month} / ${year}`;
+dateElement.innerHTML = dateString;
+
 form.addEventListener("submit", (event) => {
-  // Select the inputs
-  let validateName = document.querySelector("#new-task-name");
-  let validateDescription = document.querySelector("#new-task-description");
-  let validateAssignedTo = document.querySelector("#new-task-assigned-to");
-  let validateDueDate = document.querySelector("#new-task-due-date");
-  let validateStatus = document.querySelector("#new-task-status");
+  const validateName = document.querySelector("#new-task-name");
+  const validateDescription = document.querySelector("#new-task-description");
+  const validateAssignedTo = document.querySelector("#new-task-assigned-to");
+  const validateDueDate = document.querySelector("#new-task-due-date");
+  const validateStatus = document.querySelector("#new-task-status");
   let validationFail = 0;
 
-  // Prevent default action
   event.preventDefault();
-
+  event.stopPropagation();
   console.log("Task Name :" + validateName.value.length);
   console.log("Task Description :" + validateDescription.value.length);
   console.log("Task Assigned To :" + validateAssignedTo.value.length);
   console.log("Task Due Date :" + validateDueDate.value);
   console.log("Task Status:" + validateStatus.value);
 
-  // Form validation for Task Name Field for min length 2
-  if (validateName.value.length > 2) {
+  // Form validation for Task Name Field min length 5
+  if (validateName.value.length > 5) {
     validateName.classList.add("is-valid");
     validateName.classList.remove("is-invalid");
   } else {
@@ -34,8 +33,8 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
 
-  // Form validation for Task Description Field for min length 8
-  if (validateDescription.value.length > 8) {
+  // Form validation for Task Description Field min length 5
+  if (validateDescription.value.length > 5) {
     validateDescription.classList.add("is-valid");
     validateDescription.classList.remove("is-invalid");
   } else {
@@ -44,7 +43,7 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
 
-  // Form validation for Task Assigned Field for min length 5
+  // Form validation for Task Assigned Field min length 5
   if (validateAssignedTo.value.length > 5) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
@@ -52,8 +51,10 @@ form.addEventListener("submit", (event) => {
     validateAssignedTo.classList.add("is-invalid");
     validateAssignedTo.classList.remove("is-valid");
     validationFail++;
-  }
-  if (validateDueDate) {
+  }  
+  // Form validation for Due Date Field not empty
+  // try your own validation for a date in the future
+  if (validateDueDate.value) {
     validateDueDate.classList.add("is-valid");
     validateDueDate.classList.remove("is-invalid");
   } else {
@@ -61,13 +62,13 @@ form.addEventListener("submit", (event) => {
     validateDueDate.classList.remove("is-valid");
     validationFail++;
   }
-  // Form validation for Task Status Field for not empty
-  if (validateStatus.value) {
-    validateStatus.classList.add("is-valid");
-    validateStatus.classList.remove("is-invalid");
+  // Form validation for Task Status Field not empty
+  if (validateAssignedTo.value) {
+    validateAssignedTo.classList.add("is-valid");
+    validateAssignedTo.classList.remove("is-invalid");
   } else {
-    validateStatus.classList.add("is-invalid");
-    validateStatus.classList.remove("is-valid");
+    validateAssignedTo.classList.add("is-invalid");
+    validateAssignedTo.classList.remove("is-valid");
     validationFail++;
   }
   // If validation fails then function will not proceed further and
@@ -77,5 +78,5 @@ form.addEventListener("submit", (event) => {
   if (validationFail > 0) {
     validationFail = 0;
     return;
-  } 
+  }
 });
