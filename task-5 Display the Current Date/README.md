@@ -18,7 +18,7 @@ built-in Date object.
 > - [W3Schools Examples of the Date Object](https://www.w3schools.com/js/js_dates.asp)
 
 1. Inside index.js, create a new Date object. 
-2. Console.log the Date object you just created to see what you have to work with. It should look something like this: Make sure you create the Date object as soon as the page loads, not inside an event listener.
+2. Console.log the Date object you just created to see what you have to work with. *Make sure you create the Date object as soon as the page loads, not inside an event listener.
 3. Use independent research to find how to seperate just the day, month and year of this Date. 
 4. Display the day, month and year in the span element we selected in our code above using our innerHTML property in a way that is easy for the user to read.
 
