@@ -16,7 +16,7 @@
 
 ### Assessment criteria
 
-Refer to the [rubric](https://docs.google.com/spreadsheets/d/1jk3d_ezxaXeNAXJxuV6dLLqir8yMT5fEhaargPxbJYM/edit?usp=sharing) to see how the assessment will be marked and what is required for each task.
+Refer to the [rubric](https://docs.google.com/spreadsheets/d/1oKMVurjg8SW7cRU4-NwUxTxSvav4l5_W7yvDCHd3DKo/edit?usp=sharing) to see how the assessment will be marked and what is required for each task.
 
 
 ### Example
